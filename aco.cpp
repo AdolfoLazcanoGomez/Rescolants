@@ -90,6 +90,11 @@ ACO::ACO(Graph *instancia, ACOArgs parametros_base)
     // Establece el grafo.
     grafo = instancia;
 
+    for (auto &par : grafo->arcos)
+    {
+        par.second->multiplicidad = valor_limitador;
+    }
+
     LimiteDeMejoras = parametros_base.LimiteDeMejoras;
 
     // Establece los arreglos para el algoritmo de dijkstra
@@ -320,7 +325,8 @@ Nodo *ACO::eligeSiguiente(Hormiga &hormiga)
     {
         if(i.first->obligatoria){
             obligatorios_actuales++;
-            if(i.first->veces_recorrida > 0){
+            //if(i.first->veces_recorrida > 0){
+            if(i.first->veces_recorrida >= i.first->multiplicidad){
                 pasadas++;
             }
         }
@@ -373,7 +379,8 @@ Nodo *ACO::eligeSiguiente(Hormiga &hormiga)
 
                         Arco *arco = nullptr;
                         arco = i.first;
-                        if (arco->veces_recorrida <= valor_limitador)
+                        //if (arco->veces_recorrida <= valor_limitador)
+                        if (arco->veces_recorrida < arco->multiplicidad)
                         {
                             cantidad = hormiga.feromonas_locales[arco].cantidad;
                             if (arco->obligatoria == true){
@@ -395,7 +402,8 @@ Nodo *ACO::eligeSiguiente(Hormiga &hormiga)
                 { // si no es bidireccional, se agrega a las probabilidades de paso
                     Arco *arco = nullptr;
                     arco = i.first;
-                    if (arco->veces_recorrida <= valor_limitador)
+                    //if (arco->veces_recorrida <= valor_limitador)
+                    if (arco->veces_recorrida < arco->multiplicidad)
                     {
 
                         cantidad = hormiga.feromonas_locales[arco].cantidad;
@@ -444,7 +452,8 @@ Nodo *ACO::eligeSiguiente(Hormiga &hormiga)
 
                         Arco *arco = nullptr;
                         arco = i.first;
-                        if (arco->veces_recorrida <= valor_limitador)
+                        //if (arco->veces_recorrida <= valor_limitador)
+                        if (arco->veces_recorrida < arco->multiplicidad)
                         {
                         
 
@@ -471,7 +480,8 @@ Nodo *ACO::eligeSiguiente(Hormiga &hormiga)
                 { // si no es bidireccional, se agrega a las probabilidades de paso
                     Arco *arco = nullptr;
                     arco = i.first;
-                    if (arco->veces_recorrida <= valor_limitador)
+                    //if (arco->veces_recorrida <= valor_limitador)
+                    if (arco->veces_recorrida < arco->multiplicidad)
                     {
 
                         cantidad = hormiga.feromonas_locales[arco].cantidad;
@@ -663,8 +673,15 @@ void ACO::visitar(Hormiga &hormiga, Nodo *nodo)
 
     //cout << "El arco visitado es " << arco->origen->id << "-" << arco->destino->id<< " id: " << arco->id << endl;
     hormiga.arcos_no_visitados.erase(arco);
-    if (arco->bidireccional) {
-        hormiga.arcos_no_visitados.erase(arco->arco_reciproco);
+    // if (arco->bidireccional) {
+    //     hormiga.arcos_no_visitados.erase(arco->arco_reciproco);
+    if (arco->veces_recorrida >= arco->multiplicidad)
+    {
+        hormiga.arcos_no_visitados.erase(arco);
+        if (arco->bidireccional)
+        {
+            hormiga.arcos_no_visitados.erase(arco->arco_reciproco);
+        }
     }
 
 
