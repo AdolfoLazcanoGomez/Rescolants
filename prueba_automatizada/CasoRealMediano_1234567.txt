@@ -1,0 +1,23 @@
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+Datos de debug 🪲: 
+
+Nombre de la instancia: RencaMediano
+Comentario: Casoreal2
+Número de nodos: 76
+Número de arcos obligatorios: 92
+No hay arcos opcionales
+Número de nodos iniciales: 1
+Número de nodos terminales: 1
+Número de nodos terminales: 1
+No hay restricciones
+
+Datos: 
+Nodos iniciales: 
+31837 
+
+Nodos terminales: 
+31965 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+⌚Época 0
