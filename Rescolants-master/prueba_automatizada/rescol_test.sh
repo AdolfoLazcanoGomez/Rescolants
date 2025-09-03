@@ -2,7 +2,7 @@
 EXECUTABLE="/home/alazcano/Rescolants-master/RESCOL"
 # INPUT_FILE="/home/alazcano/Rescolants-master/Instancias/Instancias_default/CasoRealMediano.txt"
 # INSTANCE_NAME=$(basename "$INPUT_FILE" .txt) # Nombre de la instancia sin extensiÃ³n
-INST_DIR="/home/alazcano/Rescolants-master/Instancias/Instancias_test/"
+INST_DIR="/home/alazcano/Rescolants-master/prueba_automatizada/Instancias_test/"
 MULT_DIR="/home/alazcano/Rescolants-master/prueba_automatizada/Multiplicidad_instancias"
 METODO="0"
 # ITER_MAX="10"
