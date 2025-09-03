@@ -388,6 +388,9 @@ Graph leerInstancia(const std::string &nombre_archivo,
         std::ifstream multfile(ruta_multiplicidad);
         if (multfile)
         {
+            std::string header;
+            std::getline(multfile, header);  // "Arco_i Arco_j VecesRecorrido"
+            std::getline(multfile, header); 
             std::string lineaMult;
             while (std::getline(multfile, lineaMult))
             {
