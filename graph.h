@@ -46,6 +46,7 @@ struct Arco
     int veces_recorrida = 0;            // Veces que se recorre la arista
     bool bidireccional = 0;             // Indica si la arista es bidireccional
     bool obligatoria = true;             // Indica si la arista es bidireccional
+    int multiplicidad = 1;              // numero de veces que se representa la arista en el grafo
     Arco *arco_reciproco = nullptr;     // Puntero al arco reciproco (via contraria de la misma calle)
     Nodo *origen = nullptr;             // Nodo de origen
     Nodo *destino = nullptr;            // Nodo de destino

@@ -373,7 +373,57 @@ Graph leerInstancia(const std::string &nombre_archivo,
         }
     }
     }
+        // Leer multiplicidades de aristas
+    {
+        // Obtener el nombre base de la instancia sin ruta ni extensión
+        std::string nombre_instancia = nombre_archivo;
+        size_t pos = nombre_instancia.find_last_of("/\\");
+        if (pos != std::string::npos)
+            nombre_instancia = nombre_instancia.substr(pos + 1);
+        pos = nombre_instancia.find_last_of('.');
+        if (pos != std::string::npos)
+            nombre_instancia = nombre_instancia.substr(0, pos);
 
+        std::string ruta_multiplicidad = "Multiplicidad_instancias/" + nombre_instancia + ".txt";
+        std::ifstream multfile(ruta_multiplicidad);
+        if (multfile)
+        {
+            std::string lineaMult;
+            while (std::getline(multfile, lineaMult))
+            {
+                if (lineaMult.empty())
+                    continue;
+                std::istringstream multStream(lineaMult);
+                int origen, destino, multiplicidad;
+                if (!(multStream >> origen >> destino >> multiplicidad))
+                {
+                    std::cerr << "Error en el formato del archivo de multiplicidades" << std::endl;
+                    continue;
+                }
+
+                bool encontrado = false;
+                for (auto &par : g.arcos)
+                {
+                    Arco *arco = par.second;
+                    if (arco->origen->id == origen && arco->destino->id == destino)
+                    {
+                        arco->multiplicidad = multiplicidad;
+                        encontrado = true;
+                        break;
+                    }
+                }
+                if (!encontrado)
+                {
+                    std::cerr << "Par de nodos no encontrado en arcos: " << origen << " " << destino << std::endl;
+                }
+            }
+            multfile.close();
+        }
+        else
+        {
+            std::cerr << "No se pudo abrir el archivo de multiplicidades: " << ruta_multiplicidad << std::endl;
+        }
+    }
     // Saltarse header Coordenadas
     std::getline(infile, lineaDato);
 

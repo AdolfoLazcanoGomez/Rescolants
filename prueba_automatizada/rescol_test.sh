@@ -1,5 +1,5 @@
 # Definir variables
-EXECUTABLE="/home/alazcano/Rescolants-master/prueba_automatizada/rescol_test.sh"
+EXECUTABLE="/home/alazcano/Rescolants-master/RESCOL"
 INPUT_FILE="/home/alazcano/Rescolants-master/Instancias/Instancias_default/CasoRealMediano.txt"
 INSTANCE_NAME=$(basename "$INPUT_FILE" .txt) # Nombre de la instancia sin extensiÃ³n
 METODO="0"
