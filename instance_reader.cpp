@@ -384,7 +384,7 @@ Graph leerInstancia(const std::string &nombre_archivo,
         if (pos != std::string::npos)
             nombre_instancia = nombre_instancia.substr(0, pos);
 
-        std::string ruta_multiplicidad = "Multiplicidad_instancias/" + nombre_instancia + ".txt";
+        std::string ruta_multiplicidad = "/home/alazcano/Rescolants-master/Instancias/Multiplicidad_instancias" + nombre_instancia + ".txt";
         std::ifstream multfile(ruta_multiplicidad);
         if (multfile)
         {
