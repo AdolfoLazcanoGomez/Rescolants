@@ -1,0 +1,32 @@
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+Datos de debug 🪲: 
+
+Nombre de la instancia: Seg_11
+Comentario: 
+Número de nodos: 44
+Número de arcos obligatorios: 25
+Número de arcos opcionales: 15
+Número de nodos iniciales: 1
+Número de nodos terminales: 1
+Número de nodos terminales: 1
+No hay restricciones
+
+Datos: 
+Nodos iniciales: 
+67 
+
+Nodos terminales: 
+67 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+⌚Época 0
+Tiempo de ejecución: 60.0142 segundos
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+✨🏆 Mejor resultado 🏆✨
+
+Mejor hormiga: 4 🐜🥇
+Mejor costo: 7992.49 ⏩
+Mejor longitud: 53 ⚡
+El directorio de salida:./resultados/archivo_segmetación_Seg_11
+La solución es: 
