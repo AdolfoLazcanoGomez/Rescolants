@@ -28,7 +28,7 @@ PREFIJO_SALIDA="nuevos"
 RESCOL="--rescol"
 
 # for INPUT_FILE in "$INST_DIR"/*.txt; do
-for INPUT_FILE in "$SCRIPT_DIR/Instancias_test"/*.txt; d
+for INPUT_FILE in "$SCRIPT_DIR/Instancias_test"/*.txt; do
   INSTANCE_NAME=$(basename "$INPUT_FILE" .txt)
   # MULT_FILE="$MULT_DIR/$INSTANCE_NAME.txt"
   MULT_FILE="$SCRIPT_DIR/Multiplicidad_instancias/$INSTANCE_NAME.txt"
