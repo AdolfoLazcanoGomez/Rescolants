@@ -1,0 +1,32 @@
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+Datos de debug 🪲: 
+
+Nombre de la instancia: Seg_18
+Comentario: 
+Número de nodos: 125
+Número de arcos obligatorios: 84
+Número de arcos opcionales: 24
+Número de nodos iniciales: 1
+Número de nodos terminales: 1
+Número de nodos terminales: 1
+No hay restricciones
+
+Datos: 
+Nodos iniciales: 
+369 
+
+Nodos terminales: 
+746 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+⌚Época 0
+Tiempo de ejecución: 60.0604 segundos
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+✨🏆 Mejor resultado 🏆✨
+
+Mejor hormiga: 25 🐜🥇
+Mejor costo: 17842.9 ⏩
+Mejor longitud: 209 ⚡
+El directorio de salida:./resultados/archivo_segmetación_Seg_18
+La solución es: 
